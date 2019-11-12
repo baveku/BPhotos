@@ -17,7 +17,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     func configure(imageURL: String) {
         DispatchQueue.global(qos: .userInteractive).async {
-            let image = UIImage.init(contentsOfFile: imageURL)
+            let image = UIImage.init(named: imageURL)
             DispatchQueue.main.async {
                 self.imageView.image = image
             }

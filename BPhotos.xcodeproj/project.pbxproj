@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		014DF65D72EC4A2708191FF1 /* Pods_BPhotosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C805B12A662D5C7BC45AE8 /* Pods_BPhotosUITests.framework */; };
+		840E8559237AD610009C2A82 /* MainSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E8558237AD610009C2A82 /* MainSegue.swift */; };
 		84186448237AAFAF00136A16 /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84186447237AAFAF00136A16 /* PhotosPresenter.swift */; };
 		84186449237AAFAF00136A16 /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84186447237AAFAF00136A16 /* PhotosPresenter.swift */; };
 		8418644A237AAFAF00136A16 /* PhotosPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84186447237AAFAF00136A16 /* PhotosPresenter.swift */; };
@@ -190,6 +191,7 @@
 		330D74199C6A9819BEE4678A /* Pods_BPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8411DDA41DB4BFDF3E5C52 /* Pods-BPhotosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPhotosTests.debug.xcconfig"; path = "Target Support Files/Pods-BPhotosTests/Pods-BPhotosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		48C805B12A662D5C7BC45AE8 /* Pods_BPhotosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BPhotosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840E8558237AD610009C2A82 /* MainSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSegue.swift; sourceTree = "<group>"; };
 		84186447237AAFAF00136A16 /* PhotosPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPresenter.swift; sourceTree = "<group>"; };
 		8418644C237AB75E00136A16 /* img-43.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-43.jpg"; sourceTree = "<group>"; };
 		8418644D237AB75E00136A16 /* img-57.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-57.jpg"; sourceTree = "<group>"; };
@@ -323,6 +325,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		840E8557237AD5F8009C2A82 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				840E8558237AD610009C2A82 /* MainSegue.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		84186446237AAF8F00136A16 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,7 +456,7 @@
 		84E08ABE237A9A0900D6393C /* BPhotos */ = {
 			isa = PBXGroup;
 			children = (
-				84E697E9237ACB9C00B4DF74 /* Animation */,
+				840E8557237AD5F8009C2A82 /* Constants */,
 				8418644B237AB75E00136A16 /* nature */,
 				8489E7AA237AA52D00151969 /* Extensions */,
 				84E08AC8237A9A0A00D6393C /* Assets.xcassets */,
@@ -537,13 +547,6 @@
 				84E08B07237AA26200D6393C /* ImageCollectionViewCell.swift */,
 			);
 			path = CollectionCell;
-			sourceTree = "<group>";
-		};
-		84E697E9237ACB9C00B4DF74 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Animation;
 			sourceTree = "<group>";
 		};
 		9FFACB755D2F5CC2134FDD96 /* Pods */ = {
@@ -895,6 +898,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E8559237AD610009C2A82 /* MainSegue.swift in Sources */,
 				84186448237AAFAF00136A16 /* PhotosPresenter.swift in Sources */,
 				84E08AC4237A9A0900D6393C /* PhotosViewController.swift in Sources */,
 				84E08AFE237A9C1F00D6393C /* ImageModel.swift in Sources */,

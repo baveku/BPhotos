@@ -10,8 +10,7 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     let presenter = PhotosPresenter()
-    
-    var imagesURL: [String] = []
+    var listImageURL: [String] = []
     
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
@@ -24,34 +23,45 @@ class PhotosViewController: UIViewController {
         self.presenter.loadImages()
     }
     
-    func pushToViewImageDetail() {
-        
+    func pushToViewImageDetail(imageURL: String) {
+        self.performSegue(withIdentifier: EMainSegue.fromPhotosToImageDetail.rawValue, sender: imageURL)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        if identifier == EMainSegue.fromPhotosToImageDetail.rawValue {
+            let destinationVC = segue.destination as! ImageDetailViewController
+            destinationVC.imageURL = sender as! String
+        }
     }
 }
 
 // MARK: PresenterDelegate
 extension PhotosViewController: PhotosViewDelegate {
     func loadAllFileFromImageDirectory(images: [String]) {
-        self.imagesURL = images
+        self.listImageURL = images
     }
 }
 
 // MARK: UICollectionViewDelegate
 extension PhotosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        self.pushToViewImageDetail(imageURL: self.listImageURL[indexPath.item])
     }
 }
 
 // MARK: UICollectionViewDataSource
 extension PhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imagesURL.count
+        return listImageURL.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.ID, for: indexPath) as! ImageCollectionViewCell
-        cell.configure(imageURL: self.imagesURL[indexPath.item])
+        cell.configure(imageURL: self.listImageURL[indexPath.item])
         return cell
     }
 }
@@ -59,7 +69,7 @@ extension PhotosViewController: UICollectionViewDataSource {
 // MARK: UICollectionFlowLayout
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 3, height: collectionView.bounds.height / 3)
+        return CGSize(width: collectionView.bounds.width / 3 - 1, height: collectionView.bounds.height / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView,

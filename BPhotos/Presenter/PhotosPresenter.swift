@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import Kingfisher
 protocol PhotosViewDelegate {
     func loadAllFileFromImageDirectory(images: [String])
 }
 class PhotosPresenter {
     var delegate: PhotosViewDelegate?
-    private var imageURLs: [String]
+    private var imagePaths: [String]
     
     init() {
         // Initializer
-        imageURLs = []
+        self.imagePaths = []
     }
     
     func loadImages() {
-        self.imageURLs = FileHelpers.loadAllFile(with: .jpg, in: .nature)
-        self.delegate?.loadAllFileFromImageDirectory(images: imageURLs)
+        self.imagePaths = FileHelpers.loadAllFile(with: .jpg, in: .nature)
+        self.delegate?.loadAllFileFromImageDirectory(images: self.imagePaths)
     }
 }

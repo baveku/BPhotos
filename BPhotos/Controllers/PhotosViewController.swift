@@ -10,9 +10,10 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     let presenter = PhotosPresenter()
-    var listImageURL: [String] = []
+    var listImagePath: [String] = []
     
     @IBOutlet weak var photosCollectionView: UICollectionView!
+    @IBOutlet weak var titleTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,9 @@ class PhotosViewController: UIViewController {
         self.presenter.loadImages()
     }
     
-    func pushToViewImageDetail(imageURL: String) {
-        self.performSegue(withIdentifier: EMainSegue.fromPhotosToImageDetail.rawValue, sender: imageURL)
+    func pushToViewImageDetail(imagePath: String) {
+        self.performSegue(withIdentifier: EMainSegue.fromPhotosToImageDetail.rawValue, sender: imagePath)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else {
@@ -34,7 +34,7 @@ class PhotosViewController: UIViewController {
         }
         if identifier == EMainSegue.fromPhotosToImageDetail.rawValue {
             let destinationVC = segue.destination as! ImageDetailViewController
-            destinationVC.imageURL = sender as! String
+            destinationVC.imagePath = sender as! String
         }
     }
 }
@@ -42,40 +42,46 @@ class PhotosViewController: UIViewController {
 // MARK: PresenterDelegate
 extension PhotosViewController: PhotosViewDelegate {
     func loadAllFileFromImageDirectory(images: [String]) {
-        self.listImageURL = images
+        self.listImagePath = images
+        self.titleTextField.text = "\(images.count) Images"
+        self.photosCollectionView.reloadData()
     }
 }
 
 // MARK: UICollectionViewDelegate
 extension PhotosViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.pushToViewImageDetail(imageURL: self.listImageURL[indexPath.item])
+        self.pushToViewImageDetail(imagePath: self.listImagePath[indexPath.item])
     }
 }
 
 // MARK: UICollectionViewDataSource
 extension PhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listImageURL.count
+        return self.listImagePath.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.ID, for: indexPath) as! ImageCollectionViewCell
-        cell.configure(imageURL: self.listImageURL[indexPath.item])
+        cell.configure(imagePath: self.listImagePath[indexPath.item])
         return cell
     }
 }
 
 // MARK: UICollectionFlowLayout
+// Collection Config:
+//    - 4 Item / Row
+
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 3 - 1, height: collectionView.bounds.height / 3)
+        let width = collectionView.bounds.width / 4
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout
@@ -83,14 +89,5 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-}
-
-extension PhotosViewController: UIViewControllerTransitioningDelegate  {
-//    func animationController(forPresented presented: UIViewController,
-//                              presenting: UIViewController,
-//                              source: UIViewController)
-//       -> UIViewControllerAnimatedTransitioning? {
-//       return ScaleTransitionAnimationController(originFrame: cardView.frame)
-//     }
 }
 

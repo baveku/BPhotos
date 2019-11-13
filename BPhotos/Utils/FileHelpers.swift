@@ -6,55 +6,23 @@
 //  Copyright © 2019 Bách veku. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
-enum EFileType {
-    case mp3
-    case mp4
-    case jpg
+enum EFileType: String {
+    case jpg = "jpg"
     case none
-    
-    func toString() -> String? {
-        switch self {
-        case .mp3:
-            return "mp3"
-        case .mp4:
-            return "mp4"
-        case .jpg:
-            return "jpg"
-        default:
-            return nil
-        }
-    }
 }
 
-enum EDirectory {
-    case img
-    case mp4
-    case txt
-    case nature
+enum EDirectory: String {
+    case nature = "nature"
     case none
-    
-    func toString() -> String? {
-        switch self {
-        case .img:
-            return "img"
-        case .mp4:
-            return "mp4"
-        case .txt:
-            return "txt"
-        case .nature:
-            return "nature"
-        default:
-            return nil
-        }
-    }
 }
 
 
 class FileHelpers {
     class func loadAllFile(with fileType: EFileType?, in directory: EDirectory = EDirectory.none) -> [String] {
-        return Bundle.main.paths(forResourcesOfType: fileType?.toString(), inDirectory: directory.toString())
+        return Bundle.main.paths(forResourcesOfType: fileType?.rawValue, inDirectory: directory.rawValue)
     }
     
 //    class func getLocalFileFromName(name: String, in directory: EDirectory = EDirectory.none) -> Bundle {

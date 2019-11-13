@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -29,7 +30,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="MA5-wq-4qc" firstAttribute="centerX" secondItem="SvJ-J4-nqa" secondAttribute="centerX" id="gP6-V8-8Mk"/>
                                     <constraint firstItem="MA5-wq-4qc" firstAttribute="centerY" secondItem="SvJ-J4-nqa" secondAttribute="centerY" id="oLd-gH-OE7"/>
@@ -72,7 +73,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="SvJ-J4-nqa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4U8-Jk-D5T"/>
                             <constraint firstItem="liV-Ts-kIX" firstAttribute="top" secondItem="SvJ-J4-nqa" secondAttribute="bottom" id="Fa4-IO-jKW"/>
@@ -86,6 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="photosCollectionView" destination="liV-Ts-kIX" id="08j-9L-7rN"/>
+                        <outlet property="titleTextField" destination="MA5-wq-4qc" id="Gem-jb-Iub"/>
                         <segue destination="w90-7Q-yZq" kind="modal" identifier="fromPhotosToImageDetail" modalPresentationStyle="fullScreen" id="m7j-eW-rWE"/>
                     </connections>
                 </viewController>

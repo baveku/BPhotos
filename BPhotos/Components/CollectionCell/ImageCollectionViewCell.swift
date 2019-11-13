@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageCollectionViewCell: UICollectionViewCell {
     static let ID = "IMAGE_CELL"
@@ -15,13 +16,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return ImageCollectionViewCell.ID
     }
     
-    func configure(imageURL: String) {
-        DispatchQueue.global(qos: .userInteractive).async {
-            let image = UIImage.init(named: imageURL)
-            DispatchQueue.main.async {
-                self.imageView.image = image
-            }
-        }
+    // MARK: Configure Cell
+    func configure(imagePath: String) {
+        let resizeProcessor = ResizingImageProcessor(referenceSize: CGSize(width: 200, height: 200), mode: .aspectFill)
+        let url = URL.init(fileURLWithPath: imagePath)
+        self.imageView.kf.setImage(with: url, options: [.processor(resizeProcessor)])
     }
     
     @IBOutlet weak var imageView: UIImageView!

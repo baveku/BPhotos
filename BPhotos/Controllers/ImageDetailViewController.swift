@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class ImageDetailViewController: UIViewController {
-    var imageURL: String = ""
+    var imagePath: String = ""
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.imageView.image = UIImage(named: self.imageURL)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let url = URL.init(fileURLWithPath: self.imagePath)
+        self.imageView.kf.indicatorType = .activity
+        self.imageView.kf.setImage(with: url)
+    }
+    
     @IBAction func onClose(_ sender: Any) {
         self.dismiss(animated: true)
     }

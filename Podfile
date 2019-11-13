@@ -6,7 +6,7 @@ target 'BPhotos' do
   use_frameworks!
 
   # Pods for BPhotos
-  pod 'Hero'
+  pod 'Kingfisher'
   
   target 'BPhotosTests' do
     inherit! :search_paths

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -144,10 +144,8 @@
 		84186550237AB75E00136A16 /* img-59.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8418648C237AB75E00136A16 /* img-59.jpg */; };
 		84186552237AB75E00136A16 /* img-66.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8418648D237AB75E00136A16 /* img-66.jpg */; };
 		84186553237AB75E00136A16 /* img-66.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8418648D237AB75E00136A16 /* img-66.jpg */; };
-		84186555237AB78B00136A16 /* nature in Resources */ = {isa = PBXBuildFile; fileRef = 84186554237AB78B00136A16 /* nature */; };
-		8489E7AD237AA54500151969 /* CollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489E7AC237AA54500151969 /* CollectionView+Extensions.swift */; };
+		847E14C0237C065400D8E2A9 /* nature in Resources */ = {isa = PBXBuildFile; fileRef = 847E14BF237C065400D8E2A9 /* nature */; };
 		84E08AC0237A9A0900D6393C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E08ABF237A9A0900D6393C /* AppDelegate.swift */; };
-		84E08AC2237A9A0900D6393C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E08AC1237A9A0900D6393C /* SceneDelegate.swift */; };
 		84E08AC4237A9A0900D6393C /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E08AC3237A9A0900D6393C /* PhotosViewController.swift */; };
 		84E08AC7237A9A0900D6393C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E08AC5237A9A0900D6393C /* Main.storyboard */; };
 		84E08AC9237A9A0A00D6393C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E08AC8237A9A0A00D6393C /* Assets.xcassets */; };
@@ -259,11 +257,9 @@
 		8418648B237AB75E00136A16 /* img-65.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-65.jpg"; sourceTree = "<group>"; };
 		8418648C237AB75E00136A16 /* img-59.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-59.jpg"; sourceTree = "<group>"; };
 		8418648D237AB75E00136A16 /* img-66.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-66.jpg"; sourceTree = "<group>"; };
-		84186554237AB78B00136A16 /* nature */ = {isa = PBXFileReference; lastKnownFileType = folder; name = nature; path = BPhotos/nature; sourceTree = "<group>"; };
-		8489E7AC237AA54500151969 /* CollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		847E14BF237C065400D8E2A9 /* nature */ = {isa = PBXFileReference; lastKnownFileType = folder; name = nature; path = BPhotos/nature; sourceTree = "<group>"; };
 		84E08ABC237A9A0900D6393C /* BPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E08ABF237A9A0900D6393C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84E08AC1237A9A0900D6393C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84E08AC3237A9A0900D6393C /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		84E08AC6237A9A0900D6393C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84E08AC8237A9A0A00D6393C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -414,26 +410,10 @@
 			path = nature;
 			sourceTree = "<group>";
 		};
-		8489E7AA237AA52D00151969 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8489E7AB237AA53200151969 /* UI */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8489E7AB237AA53200151969 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				8489E7AC237AA54500151969 /* CollectionView+Extensions.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		84E08AB3237A9A0900D6393C = {
 			isa = PBXGroup;
 			children = (
-				84186554237AB78B00136A16 /* nature */,
+				847E14BF237C065400D8E2A9 /* nature */,
 				84E08ABE237A9A0900D6393C /* BPhotos */,
 				84E08AD5237A9A0A00D6393C /* BPhotosTests */,
 				84E08AE0237A9A0A00D6393C /* BPhotosUITests */,
@@ -458,7 +438,6 @@
 			children = (
 				840E8557237AD5F8009C2A82 /* Constants */,
 				8418644B237AB75E00136A16 /* nature */,
-				8489E7AA237AA52D00151969 /* Extensions */,
 				84E08AC8237A9A0A00D6393C /* Assets.xcassets */,
 				84E08AC5237A9A0900D6393C /* Main.storyboard */,
 				84E08AF3237A9B9900D6393C /* App */,
@@ -534,7 +513,6 @@
 			isa = PBXGroup;
 			children = (
 				84E08ABF237A9A0900D6393C /* AppDelegate.swift */,
-				84E08AC1237A9A0900D6393C /* SceneDelegate.swift */,
 				84E08ACA237A9A0A00D6393C /* LaunchScreen.storyboard */,
 				84E08ACD237A9A0A00D6393C /* Info.plist */,
 			);
@@ -573,6 +551,7 @@
 				84E08AB8237A9A0900D6393C /* Sources */,
 				84E08AB9237A9A0900D6393C /* Frameworks */,
 				84E08ABA237A9A0900D6393C /* Resources */,
+				A294D4B200FBFEFFD88632D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -669,7 +648,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84186555237AB78B00136A16 /* nature in Resources */,
+				847E14C0237C065400D8E2A9 /* nature in Resources */,
 				84E08ACC237A9A0A00D6393C /* LaunchScreen.storyboard in Resources */,
 				84E08AC9237A9A0A00D6393C /* Assets.xcassets in Resources */,
 				84E08AC7237A9A0900D6393C /* Main.storyboard in Resources */,
@@ -869,6 +848,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A294D4B200FBFEFFD88632D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BPhotos/Pods-BPhotos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BPhotos/Pods-BPhotos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BPhotos/Pods-BPhotos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C105CD08F7E0657F297733FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -904,9 +900,7 @@
 				84E08AFE237A9C1F00D6393C /* ImageModel.swift in Sources */,
 				84E08AC0237A9A0900D6393C /* AppDelegate.swift in Sources */,
 				84E08B08237AA26200D6393C /* ImageCollectionViewCell.swift in Sources */,
-				8489E7AD237AA54500151969 /* CollectionView+Extensions.swift in Sources */,
 				84E08B02237A9CC200D6393C /* FileHelpers.swift in Sources */,
-				84E08AC2237A9A0900D6393C /* SceneDelegate.swift in Sources */,
 				84E08AFA237A9C0A00D6393C /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1094,6 +1088,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JGXXBSPSUH;
 				INFOPLIST_FILE = "$(SRCROOT)/BPhotos/App/Launch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1113,6 +1108,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JGXXBSPSUH;
 				INFOPLIST_FILE = "$(SRCROOT)/BPhotos/App/Launch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
